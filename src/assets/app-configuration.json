@@ -1,0 +1,9 @@
+{
+    "Apibase": "http://localhost:5001/api/",
+    "Apimobilebase": "http://localhost:5001/api/",
+    "ApibaseActual": "http://localhost:5001/api/",
+    "ApibaseMock": "http://localhost:3000/",
+    "ReleseType": "UAT",
+    "Country": "Aus",
+    "Version": "1.0.0.0"
+}

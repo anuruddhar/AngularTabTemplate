@@ -1,0 +1,77 @@
+<div
+  class="layout-sidebar"
+  (click)="onMenuClick($event)"
+  (mouseenter)="app.onMenuMouseEnter($event)"
+  (mouseleave)="app.onMenuMouseLeave($event)"
+>
+  <div class="layout-sidebar-logo">
+    <a href="/">
+      <img src="assets/images/icon.png" alt="G" />
+    </a>
+    <a
+      href="#"
+      id="layout-sidebar-anchor"
+      class="layout-sidebar-anchor"
+      title="Slim Menu"
+      (click)="app.onAnchorClick($event)"
+    >
+      <i class="fa"></i>
+    </a>
+  </div>
+  <app-scroll-panel #layoutMenuScroller [style]="{ height: '100%' }">
+    <div class="sidebar-scroll-content">
+      <div class="layout-menu-container">
+        <!-- <ul app-submenu [item]="model" root="true" class="layout-menu" visible="true" [reset]="reset" parentActive="true"></ul> -->
+        <ul class="layout-menu" root="true" visible="true" parentActive="true">
+          <li *ngFor="let child of model; let i = index" [ngClass]="{'active-menuitem': isActive(i)}" 
+          [class]="child.badgeStyleClass"
+            >
+            <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)"
+              *ngIf="!child.routerLink" [ngClass]="child.styleClass"
+              [attr.tabindex]="'-1'" [attr.target]="child.target">
+                <i [ngClass]="child.icon"></i>
+                <span>{{child.label}}</span>
+                <i class="fa fa-fw fa-angle-down layout-submenu-toggler" *ngIf="child.items"></i>
+                <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
+            </a>
+      
+            <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" *ngIf="child.routerLink"
+              [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink"
+              [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="'-1'" [attr.target]="child.target">
+                <i [ngClass]="child.icon"></i>
+                <span>{{child.label}}</span>
+                <i class="fa fa-fw fa-angle-down layout-submenu-toggler" *ngIf="child.items"></i>
+                <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
+            </a>
+
+            <ul parentActive="isActive(i)" visible="isActive(i)"  [@children]="(app.isHorizontal()) ? isActive(i) ? 
+            'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'">
+              <li *ngFor="let child2 of child.items; let i = index" [ngClass]="{'active-menuitem': isActive(i)}" 
+                >
+                <a [href]="child2.url||'#'" (click)="itemClick($event,child2,i)" (mouseenter)="onMouseEnter(i)"
+                  *ngIf="!child2.routerLink" [ngClass]="child2.styleClass"
+                  [attr.tabindex]="'-1'" [attr.target]="child2.target">
+                    <i [ngClass]="child2.icon"></i>
+                    <span>{{child2.label}}</span>
+                    <i class="fa fa-fw fa-angle-down layout-submenu-toggler" *ngIf="child2.items"></i>
+                    <span class="menuitem-badge" *ngIf="child2.badge">{{child2.badge}}</span>
+                </a>
+          
+                <a (click)="itemClick($event,child2,i)" (mouseenter)="onMouseEnter(i)" *ngIf="child2.routerLink"
+                  [routerLink]="child2.routerLink" routerLinkActive="active-menuitem-routerlink"
+                  [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="'-1'" [attr.target]="child2.target">
+                    <i [ngClass]="child2.icon"></i>
+                    <span>{{child2.label}}</span>
+                    <i class="fa fa-fw fa-angle-down layout-submenu-toggler" *ngIf="child2.items"></i>
+                    <span class="menuitem-badge" *ngIf="child2.badge">{{child2.badge}}</span>
+                </a>
+             </li>
+           </ul>
+
+         </li>
+       </ul>
+
+      </div>
+    </div>
+  </app-scroll-panel>
+</div>

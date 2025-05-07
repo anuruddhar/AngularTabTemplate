@@ -1,0 +1,56 @@
+.tab-wrapper {
+    background-color: $sidebarTopEndBgColor;
+    margin-top : 46px;
+    padding-left: 5px;
+
+    a.tab-item {
+        padding: 1px 2px;
+        display: inline-block;
+        cursor: pointer;
+        color: $tabPanelTextColor;
+        transition: 0.5s;
+        border: 1px solid $tabPanelItemBorderColor;
+        background-color: $tabPanelItemBgColor;
+        border-radius: 30px;
+        margin-right: 8px;
+        font-size: 0.9em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        &:hover{
+            background-color: $tabPanelItemActiveBgColor;
+            color: $tabPanelItemActiveTextColor;
+            border-radius: 30px;
+            border: 1px solid $tabPanelItemActiveBorderColor;
+        }
+        > span {
+            margin: 4px 4px 4px 10px;
+            display: inline-block;
+            text-align: center;
+        }
+
+    }
+    .tab-item-close{
+        font-size:  15px;
+    }
+    .tab-item-lble{
+        vertical-align: 1px;
+    }
+
+    a.tab-item.active{
+        background: $tabPanelItemActiveBgColor;
+        color: $tabPanelItemActiveTextColor;
+        border-radius: 30px;
+        border: 1px solid $tabPanelItemActiveBorderColor;
+
+        &:hover{
+            color: $tabPanelItemActiveTextColor;
+        }
+    }
+}
+
+
+.msg-send-button {
+  background-color: $sidebarTopEndBgColor;
+}
+

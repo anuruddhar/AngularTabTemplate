@@ -1,0 +1,53 @@
+<div class="login-body">
+  <form #loginForm="ngForm" (ngSubmit)="login()" novalidate class="f-h">
+    <div class="d-flex f-h login-wrapper">
+      <div
+        class="login-container animated fadeInDown loading"
+        *ngIf="loginUser.UserLogin"
+      >
+        <div class="login-top">
+          <div class="">
+            <img src="assets/images/logo.png" />
+          </div>
+        </div>
+        <div class="login-content">
+          <div class="user-block">
+            <h3>{{ i18n?.WELCOME }} to AccuReach!</h3>
+          </div>
+          <div class="location-block">
+            <div class="p-col-12 p-t-0 p-b-0 app-form-group">
+              <label for="username" style="text-align: left">UserName:</label>
+              <input
+                type="text"
+                id="username"
+                pInputText
+                class="app-form-control"
+              />
+            </div>
+            <div class="p-col-12 p-t-0 p-b-0 app-form-group">
+              <label for="password" style="text-align: left">Password:</label>
+              <input
+                type="text"
+                id="password"
+                pInputText
+                class="app-form-control"
+              />
+            </div>
+          </div>
+          <div class="button-container">
+            <button
+              type="submit"
+              class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only blue-btn raised-btn"
+            >
+              <span class="ui-button-text ui-c">{{ i18n?.SIGN_IN }}</span>
+            </button>
+          </div>
+
+          <label for="inventorylocation" class="select-location">Forgot Password?</label>
+          <div class="input-wrapper"></div>
+        </div>
+        <!-- <ngx-loading [show]="IsDataLoading" [config]="config" [template]="loadingTemplate"></ngx-loading> -->
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,75 @@
+<div class="layout-wrapper" [ngClass]="{'layout-horizontal': menuMode === 'horizontal',
+                                        'layout-static': menuMode === 'static',
+                                        'layout-slim': menuMode === 'slim',
+                                        'layout-slim-active': slimMenuActive && menuMode === 'slim',
+                                        'layout-slim-anchored': slimMenuAnchor,
+                                        'layout-slim-restore': (menuMode !== 'slim' && slimMenuAnchor),
+                                        'layout-toggle': menuMode === 'toggle',
+                                        'layout-toggle-active': toggleMenuActive,
+                                        'layout-overlay': menuMode === 'overlay',
+                                        'layout-overlay-active': overlayMenuActive,
+                                        'layout-light': lightMenu === true,
+                                        'layout-mobile-active': staticMenuMobileActive,
+                                        'layout-static-inactive': staticMenuDesktopInactive}"
+    (click)="onLayoutClick()">
+
+
+    <div class="layout-main app-container">
+        <app-top-bar></app-top-bar>
+        <div class="router-load-bg"  *ngIf="isLoading">
+            <div class="router-load-indicator-out">
+                <div class="router-load-indicator-in">
+                  {{i18n.LOADING_MODULE}}
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB PANEL BEGIN -->
+        <div class="tab-wrapper test-bg" *ngIf="isDisplayTabBar()">
+            <a class="tab-item d-flex-inline justify-content-between" [class.active]="isActive(tab.id)"
+                *ngFor="let tab of getTabs()" (click)="selectTab(tab.id)">
+                <span class="tab-item-lble">
+                    {{tab.title}}
+                </span>
+
+                <span (click)="deleteTab(tab.id)" class="tab-item-close">
+                    <i class="fa fa-fw fa-times-circle"></i>
+                </span>
+            </a>
+        </div>
+
+        <div class="app-note-container" *ngIf="!isDisplayTabBar()">
+          <div class="app-icon-bg">
+            <span class="app-icon">
+              <i class="fa fa-fw fa-bank"></i>
+            </span>
+          </div>
+            <div class="app-shortcut">
+              <div class="shortcut-container">
+                <div class="d-flex m-b-15">
+                  <div class="shortcut-name">{{i18n.BTN_SAVE}}</div><div><span class="key-span">Ctrl</span>  + <span class="key-span">S</span> </div>
+                </div>
+                <div class="d-flex m-b-15">
+                  <div class="shortcut-name">{{i18n.SAVE_CONTINUE}}</div> <div><span class="key-span">Ctrl</span> + <span class="key-span">Shift</span> + <span class="key-span">C</span></div>
+                </div>
+                <div class="d-flex">
+                  <div class="shortcut-name">{{i18n.SHOW_HIDE_ADV_SEARCH}}</div> <div><span class="key-span">Ctrl</span> + <span class="key-span">Shift</span> + <span class="key-span">A</span></div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+        <!-- TAB PANEL END -->
+        <div class="app-router-container" *ngIf="isDisplayTabBar()">
+            <router-outlet></router-outlet>
+        </div>
+
+
+
+        <app-footer></app-footer>
+        <div class="layout-main-mask"></div>
+    </div>
+    <app-right-panel></app-right-panel>
+    <app-menu [reset]="resetMenu"></app-menu>
+</div>

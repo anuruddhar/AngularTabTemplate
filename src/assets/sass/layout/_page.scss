@@ -1,0 +1,166 @@
+// Screen Layout Type 01
+.main-container{
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    padding: 10px;
+  
+    .main-panel{
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      padding-left: 0px;
+      width: 100%;
+    }
+  
+    .left-panel{
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      padding-left: 0px;
+      width: 100%;
+    }
+  
+    .right-panel{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 400px;
+      margin-left: 10px;
+    }
+    
+    .centered-div-container{
+      display: flex;
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;    
+      height: 100%;
+    }
+  
+    .data-panel-details{
+      display: flex;
+      flex-grow: 1;
+      padding: 10px;
+    }
+  
+    .data-content{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+}
+
+// Screen Layout Type 02
+.scrollable-main-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100%);
+
+    .two-section-wrapper {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-gap: 0px;
+        grid-template-rows:min-content  100%;
+
+        .section {
+            width: 100%;
+            height: 100%;
+            scroll-snap-stop: normal;
+            display: grid;
+            grid-gap: 0;
+            overflow: auto;
+            scroll-snap-align: start;
+
+            .top-bar{
+                display: flex;
+                width: 100%;
+                
+                .header-item-container{
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+
+                    .label{
+                        font-size: .8em;
+                    }
+                    
+                    .data{
+                        font-weight: 600;
+                    }
+                }
+
+            }
+
+            .chart-panel{
+                display: flex;
+                height: 175px;
+                width: 100%;
+
+                .left-chart{
+                    width: 65%;
+                    background: #ffffff;
+                }
+                
+                .right-chart{
+                    width: 35%;
+                    background: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+// Sub Component Layout Type 01
+.sub-component-contianer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .filter-panel-container{
+        background-color: white;
+        position: relative;
+
+        .filter-panel{
+            display: flex;
+            background-color: white;
+            border-top: 1px solid #e9e9f1;
+            border-bottom: 1px solid #e9e9f1;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .left-content{      
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+            }
+
+            .middle-content{      
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .right-content{      
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .filter-control-container{
+                label{
+                    margin-right: 10px;
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+        
+    }
+}

@@ -1,0 +1,151 @@
+<div class="main-container" #mainContainer>
+  <div class="left-panel">
+    <div class="search-panel app-section">
+      <div class="search-pane">
+        <div class="header-with-bg">
+          {{i18n.BTN_SEARCH}}
+        </div>
+        <ng-container *ngTemplateOutlet="filter_content"></ng-container>
+      </div>
+    </div>
+
+    <app-widget-panel *ngIf="Widgets!.length > 0" [Widgets]="Widgets" style="margin-bottom: 15px;"
+      (WidgetItemClicked)="onWidgetItemClicked($event)"></app-widget-panel>
+
+    <div class="data-panel app-section">
+      <div class="tab-panel">
+        <div class="left-content" >
+          <div class="item effect" [ngClass]="{'active': IsShowHistory}" (click)="showHideHistory()">{{i18n.TAB_HISTORY}}</div>
+          <div class="item effect" [ngClass]="{'active': !IsShowHistory}" (click)="showHideHistory()">{{i18n.TAB_SEARCH_RESULT}}</div>
+        </div>
+        <div class="right-content">
+          <div *ngIf="!IsShowShowHidePanelButton" class="rightpanel-btn" style="width: unset"
+            [ngClass]="{'rightpanel-btn-active': IsShowSidePanel}">
+            <i class="topbar-icon fa fa-bars"></i>
+          </div>
+          <div *ngIf="IsShowShowHidePanelButton" class="rightpanel-btn" style="width: unset"
+            [ngClass]="{'rightpanel-btn-active': IsShowSidePanel}">
+            <i class="topbar-icon fa fa-fw fa-outdent" (click)="showHideSidePanel()"></i>
+          </div>
+        </div>
+      </div>
+      <div class="data-panel-details-super loading">
+        <div style="height: 100%" *ngIf="IsShowHistory ; then  history_content else search">{{i18n.MSG_IGNORED}}</div>
+      </div>
+    </div>
+    <app-action-menu [ActionMenuItems]="ActionMenuItems" (ActionMenuItemClicked)="onRefresh()"></app-action-menu>
+  </div>
+
+  <div class="right-panel app-section" *ngIf="IsShowSidePanel">
+    <div class="search-pane">
+      <div class="header-with-bg">
+        {{i18n.BTN_SEARCH}}
+      </div>
+      <ng-container *ngTemplateOutlet="filter_content"></ng-container>
+    </div>
+    <div class="right-panel-action-pane">
+      <div class="header-with-bg">
+        {{i18n.ACTIONS}}
+      </div>
+      <div class="action-item-container">
+        <div class="item" *ngFor="let item of ActionPanelItems" (click)="onActionItemClicked(item.ActionPanelItemKey)"
+          [ngClass]="{ 'disabled':item.Disabled }">
+          <div class="icon-holder">
+            <i [ngClass]="item.Icon"></i>
+          </div>
+          <div>{{item.Description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #filter_content>
+  <div class="search-pane-controls p-3">
+    <p-dropdown [options]="ListItems" [(ngModel)]="CurrentSeachCriteria.SearchBy" *ngIf="ListItems.length > 0"
+      (onChange)="onItemChange(CurrentSeachCriteria.SearchBy)">
+    </p-dropdown>
+    <div class="app-form-group" style="margin-top: 5px;">
+      <div class="app-input-group">
+        <input type="text" pInputText placeholder="E.g.{{i18n.DESCRIPTION}}" [(ngModel)]="CurrentSeachCriteria.SearchString"
+          (keydown)="onEnterKeyPressed($event)">
+        <button title="btnShowAdditionalFilters" *ngIf="IsShowAdditionalFilterButton" pButton type="button" icon="pi pi-filter"
+          (click)="onShowAdditionalFilterClicked()"></button>
+        <button title="btnSearch" pButton type="button" icon="fa fa-search" (click)="onSearchClicked()"></button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #history_content>
+  <div *ngIf="LocalStorageSearchList?.SearchCirteriaList?.length == 0" class="no-history-content">{{i18n.MSG_NO_PREV_SEARCH}}
+  </div>
+  <div *ngIf="LocalStorageSearchList!.SearchCirteriaList!.length > 0" class="history-content">
+    <div class="list-item-container border-l-primary" style="cursor: pointer"
+      *ngFor="let item of LocalStorageSearchList.SearchCirteriaList" (click)="onHistoryItemClicked(item)">
+      <div class="list-item">
+        {{ item.SearchCriteriaString}}
+      </div>
+      <div class="list-item date-by-period mt-1">
+        {{ item.SearchDateTime | date:'medium' }}
+      </div>
+    </div>
+  </div>
+  <!-- <ngx-loading [show]="IsHistoryLoading" [config]="config" [template]="loadingTemplate"></ngx-loading> -->
+</ng-template>
+<ng-template #search>
+  <div class="table-container">
+    <!-- <div class="table-filter-container ui-widget-header widget-blue-header">
+      <i class="fa fa-search search-ico" style="margin:4px 4px 0 0"></i>
+      <input (input)="dt.filterGlobal($event.target.value?, 'contains')" type="text" pInputText size="50"
+        placeholder="{{i18n.GLOBAL_FILTER}}" class="filter-input">
+    </div> -->
+    <!-- [contextMenu]="cm"  -->
+    <div class="table-data-container">
+      <p-table [columns]="Columns" [value]="GridData" [responsive]="true" [scrollable]="true" sortMode="single"
+        [selectionMode]="SelectionMode" [(selection)]="SelectedItems" [metaKeySelection]="true"
+        (onRowSelect)="onRowSelect()" (onRowUnselect)="onRowSelect()"
+        (onHeaderCheckboxToggle)="onRowSelect()" scrollHeight="100%" 
+        [lazy]="true" (onLazyLoad)="onPageClicked($event)" [paginator]="true" [rows]="ItemsPerPage"
+        [totalRecords]="CurrentSeachCriteria.TotalItems" exportFilename="SuperVisionData" 
+        (onSort)="onCustomSort($event)" [customSort]="true" [resetPageOnSort]="false" #dt>
+        <ng-template pTemplate="colgroup" let-columns>
+          <colgroup>
+            <col *ngIf="IsSelectMultiple">
+            <col *ngFor="let col of Columns" [style.width]="col.width">
+          </colgroup>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th style="width: 3em" *ngIf="IsSelectMultiple">
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of Columns" pResizableColumn [pSortableColumn]="col.field" [hidden]="col.hidden">
+              {{col.header}}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="Columns">
+          <tr [pContextMenuRow]="rowData" [pSelectableRow]="rowData" (dblclick)="onDblClick(rowData)">
+            <td style="width: 3em" *ngIf="IsSelectMultiple">
+              <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of Columns" class="ui-resizable-column" [ngClass]="col.class" [style.color]="col.color" [hidden]="col.hidden">
+              <!-- <div [innerHTML]="rowData[col.field]"></div> -->
+              <!-- {{col.type == 'date'?  (rowData[col.field] | date: global.InputDateFormat) : <div [innerHTML]="rowData[col.field]"></div>}} -->
+              <div *ngIf="col.type == 'date'">
+                {{(rowData[col.field] | date: global.InputDateFormat)}}
+              </div>
+              <div *ngIf="col.type != 'date'" [innerHTML]="rowData[col.field]" >
+              </div>
+              <!-- pTooltip="{{rowData[col.tooltip]}}" -->
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <!-- <p-contextMenu #cm [model]="ContextMenuItems"></p-contextMenu> -->
+    </div>
+    <!-- <ngx-loading [show]="IsDataLoading" [config]="config" [template]="loadingTemplate"></ngx-loading> -->
+  </div>
+</ng-template>

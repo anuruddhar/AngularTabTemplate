@@ -1,0 +1,23 @@
+{
+  "WELCOME":"欢迎",
+  "SIGN_IN":"登入",
+  "BTN_SAVE": "节省",
+  "BTN_SEARCH": "搜索",
+  "BTN_SEAR_001": "以前的",
+  "BTN_SEAR_002": "下一个",
+  "BTN_SEAR_003": "出口",
+  "BTN_SEAR_004": "选择",
+  "BTN_SEAR_005": "关闭",
+  "BTN_SPB_001": "浏览",
+  "BTN_UNSELECT_ALL": "全部取消选择",
+  "BTN_UPDATE": "更新",
+  "BTN_YES": "是的",
+  "SAVE_CONTINUE":"保存并继续",
+  "SHOW_HIDE_ADV_SEARCH":"显示/隐藏高级搜索",
+  "LOADING_MODULE":"加载模块",
+  "TAB_HISTORY" : "历史",
+  "TAB_SEARCH_RESULT" : "搜索结果",
+  "MSG_NO_PREV_SEARCH": "没有以前的搜索记录！",
+  "MSG_IGNORED": "忽略",
+  "ACTIONS": "动作"
+}

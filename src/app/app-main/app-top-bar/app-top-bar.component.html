@@ -1,0 +1,70 @@
+<div class="layout-topbar">
+    <a href="#" id="layout-menu-btn" class="menu-btn" (click)="app.onMenuButtonClick($event)">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <div class="topbar-search">
+        <input type="text" class="ui-widget app-topbar-searcher" pInputText (keydown)="onKeyPressedOnBarcodeTextBox($event)" [(ngModel)]="BarcodeNo" placeholder="{{i18n.BTN_SEARCH}}" />
+        <i class="fa fa-search"></i>
+    </div>
+
+    <div class="layout-topbar-menu-wrapper">
+        <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-active': app.topbarMenuActive}">
+            <li class="profile-item" #profile [ngClass]="{'active-topmenuitem':app.activeTopbarItem === profile}"
+                (click)="op.toggle($event)">
+                <a (click)="op.toggle($event)">
+                    <img src="assets/images/avatar.png" alt="manhattan-layout" />
+                    <span class="topbar-item-name profile-name">{{UserName}}</span>
+                </a>
+
+                <!-- <ul class="fadeInDown animated user-panel">
+                    <h2>Settings</h2>
+                    <div class="form-container ui-fluid">
+                        <div class="app-form-group">
+                            <label>Language</label>
+                            <p-dropdown [(ngModel)]="selectedLanguage"></p-dropdown>
+                        </div>
+                        <div class="app-form-group">
+                            <label>Inventory Location</label>
+                            <p-dropdown></p-dropdown>
+                        </div>
+                        <div class="settings-footer m-t-20" style="display: none">
+                            <button>Sign out</button>
+                        </div>
+                    </div>
+                </ul> -->
+            </li>
+        </ul>
+        <div class="settings-panel">
+            <p-overlayPanel #op>
+                <h2>{{i18n.SETTINGS}}</h2>
+                <div class="settings-contents ui-fluid">
+                    <div class="app-form-group">
+                        <label>{{i18n.LANGUAGE}}</label>
+                        <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="onLanguageChanged()">
+                                <ng-template let-item pTemplate="item">
+                                        <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+                                            <div style="font-size:14px;margin-top:4px">{{item.label}}</div>
+                                        </div>
+                                    </ng-template>
+                        </p-dropdown>
+                    </div>
+                    <div class="app-form-group iv-location">
+                        <label>{{i18n.GRD_CONUN_006}}</label>
+                        <!-- <p-dropdown [options]="invetoryLocations" [(ngModel)]="selectedInventoryLocationId" [filter] = "true" (onChange)="onInventoryLocationChange()"></p-dropdown> -->
+                    </div>
+                    <div class="m-b-10">
+                        <button type="button" class="ui-button-warning" pButton (click)="UpdateUser()" label="Set as Default" class="ui-button"></button>
+                    </div>
+                    <div class="settings-footer m-t-20">
+                        <button (click)="Logout()">Sign out</button>
+                    </div>
+                </div>
+            </p-overlayPanel>
+        </div>
+
+        <a href="#" class="topbar-menu-btn" (click)="app.onTopbarMenuButtonClick($event)">
+            <img src="assets/images/avatar.png" alt="manhattan-layout" />
+        </a>
+    </div>
+</div>

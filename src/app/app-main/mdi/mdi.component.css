@@ -1,0 +1,77 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.app-router-container {
+  display: flex;
+  flex-grow: 2;
+  background-color: #f0f0f7;
+  overflow: auto;
+}
+
+.app-note-container {
+  display: flex;
+  flex-grow: 2;
+  background-color: #f0f0f7;
+  overflow: auto;
+  position: relative;
+}
+.app-icon-bg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-icon-bg .app-icon {
+  font-size: 20rem;
+  color: #dcdcea6b;
+}
+.shortcut-name {
+  width: 190px;
+  text-align: right;
+  padding-right: 10px;
+}
+.app-shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.shortcut-container {
+  width: 375px;
+  font-size: 13px;
+  background: #ffffff24;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -0px;
+  font-weight: 600;
+  color: #3b3b61;
+}
+.key-span {
+  border-radius: 3px;
+  background: #dcdcef;
+  padding: 1px 5px;
+  box-shadow: 0 1px 0px 0 rgb(81 82 97 / 50%);
+}
+@media (max-width: 640px) {
+  .app-container {
+    left: 0;
+  }
+}

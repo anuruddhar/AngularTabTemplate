@@ -1,0 +1,319 @@
+<div class="landing-bg slideshow v-align-midde">
+    <!-- <div class="top-nav-ico-holder">
+        <div class="d-flex">
+            <div class="top-nav">
+                <span class="icon icon-test-function"></span><span>Configuration</span>
+            </div>
+            <div class="top-nav">
+                <span class="icon icon-help-circled"></span><span>Help</span>
+            </div>
+        </div>
+    </div> -->
+    <div class="nav-content">
+        <div class="text-align-center m-t-20 greet-msg">
+            <h2> <span>Greetings</span> {{ UserId }}</h2>
+            <h3><span class="com-icons"><i class="icon icon-calendar"></i></span> {{ CurrentTime | date:'medium'}} <span
+                    class="com-icons m-l-10"><i class="icon icon-map"></i></span>You are now logged in to
+                {{InventoryLocationName}}</h3>
+        </div>
+        <div class="nav-container" *ngIf="IsShowMainMenus">
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDashboardClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-dashboard-icon"></i></span>
+                            <h4>Dashboard</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onInitalizationClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-initialization"></i></span>
+                            <h4>Initialization</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item">
+                    <div class="nav-col production">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-production"></i></span>
+                            <h4>Production</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item">
+                    <div class="nav-col assignment">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-assignment"></i></span>
+                            <h4>Assignment</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item">
+                    <div class="nav-col delivery">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-trip"></i></span>
+                            <h4>Delivery</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onTestingClick()">
+                    <div class="nav-col testing">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-test-icon-main"></i></span>
+                            <h4>Testing</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item">
+                    <div class="nav-col configuration">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-test-function"></i></span>
+                            <h4>Configuration</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item">
+                    <div class="nav-col moveto">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-change-barcode-1"></i></span>
+                            <h4>Move To</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item">
+                    <div class="nav-col help">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-help-circled"></i></span>
+                            <h4>Help</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="nav-container" *ngIf="IsShowDashboardMenus">
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBCylinderShortageClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-cyl-shortage"></i></span>
+                            <h4>Cylinder Shortage</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBFillingClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-filling"></i></span>
+                            <h4>Filling</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBStockClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-stock"></i></span>
+                            <h4>Stock</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBOrdersClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-orders"></i></span>
+                            <h4>Orders</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBTripsClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-trip"></i></span>
+                            <h4>Trips</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBMapClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-map"></i></span>
+                            <h4>Map</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBKPIClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-kpi"></i></span>
+                            <h4>KPI</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBTripwiseShortageClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-tripwise-shortage"></i></span>
+                            <h4>Tripwise Shortage</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBReorderLevelClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-reorder-level"></i></span>
+                            <h4>Reorder Level</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDBSettingsClicked()">
+                    <div class="nav-col dashboard">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-setting"></i></span>
+                            <h4>Settings</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onDbBackClicked()">
+                    <div class="nav-col help">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="fa fa-fw chevron-circle-left"></i></span>
+                            <h4>Back</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-container" *ngIf="IsShowInitializationMenus">
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onItemSupervisionClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-item-supervision-1"></i></span>
+                            <h4>Item Supervision</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onStandardInitializationClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-standared-initialization"></i></span>
+                            <h4>Standard Initialization</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onLiteInitializationClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-lite-initialization"></i></span>
+                            <h4>Lite Initialization</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onBulkInitializationClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-bulk-initialization"></i></span>
+                            <h4>Bulk Initialization</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onSupplierManagementClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-supplier-management"></i></span>
+                            <h4>Supplier Management</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onBulkUploadClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-bulk-upload-2"></i></span>
+                            <h4>Bulk Upload</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-grid justify-content-center">
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onSupplierCylInitializationClicked()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-supplier-cylinder-initialization"></i></span>
+                            <h4>Supplier Cyl. Initialization</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onSupplierReturn()">
+                    <div class="nav-col initialization">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="icon icon-supplier-return-2"></i></span>
+                            <h4>Supplier Return</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-3 p-lg-3 nav-item" (click)="onInitBackClicked()">
+                    <div class="nav-col help">
+                        <div class="eff"></div>
+                        <div class="nav-overlay">
+                            <span class="nav-icon"><i class="fa fa-fw chevron-circle-left"></i></span>
+                            <h4>Back</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

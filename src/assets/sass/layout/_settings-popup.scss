@@ -1,0 +1,86 @@
+.settings-panel{
+    .ui-overlaypanel{
+        right: 70px;
+        left: unset !important;
+        width: 290px;
+        top: 64px !important;
+        // position: relative;
+        //background: #88b7d5;
+        //border: 1px solid #c2e1f5;
+    }
+    .ui-overlaypanel::after, .ui-overlaypanel::before{
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    .ui-overlaypanel:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-bottom-color: #f4f3f8;
+        border-width: 10px;
+        margin-left: 136px;
+    }
+    .ui-overlaypanel:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-bottom-color: #e3e2e8;
+        border-width: 12px;
+        margin-left: 134px;
+    }
+   
+    .ui-overlaypanel-content{
+        padding: 0 !important;
+    }
+
+    h1{
+        background: $bodyBgColor;
+        text-align: center;
+        font-size: 1.4em;
+        padding: 15px;
+        font-weight: 500;
+        border-bottom: 1px dashed #e8e8e8;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    h4{
+        margin-bottom: 5px;
+    }
+    .settings-contents{
+        padding: 20px;
+    }
+    .settings-footer{
+
+        button{
+            width: 100%;
+            color: $newWorningColor;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px dashed #f5a700;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        button:hover{           
+            color: #fff;
+            background-color: $newWorningColor;           
+            border: 1px solid #f5a700;
+        }
+    }
+    .ui-dropdown{
+        border-color: #dbdde4;
+        border-radius: 5px;
+        font-size: 1.1em;
+    }
+    .ui-inputtext{
+        border-color: #dbdde4;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1em;
+    }
+    .ui-dropdown .ui-dropdown-trigger{
+       border-top-right-radius: 5px;
+       border-bottom-right-radius: 5px;
+    }
+}

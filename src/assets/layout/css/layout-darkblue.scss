@@ -1,0 +1,16 @@
+//Used for Page layout
+//sass --watch src/assets/layout/css/layout-darkblue.scss:src/assets/layout/css/layout-darkblue.css  
+
+
+// $primaryColor:#5A87B0;
+$primaryColor:#15a4fa; 
+$accentColor:#15a4fa;
+$accentTextColor:#ffffff;  
+ 
+   
+    
+@import '../../sass/layout/_layout';   
+
+
+//ROOBAN Layout overide variables
+$sidebarLogoBgColor:purple;       

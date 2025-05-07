@@ -1,0 +1,12 @@
+<div *ngIf="actionMenuItems.length == 1" class="action-button" [ngClass]="actionMenuItems[0].Class" (click)="actionMenuItemClicked(actionMenuItems[0])">
+  <i [class]= "actionMenuItems[0].Icon" aria-hidden="true"></i>
+</div>
+
+<div *ngIf="actionMenuItems.length > 1" class="action-button-menu" (click)="showOrHideSubMenu()">
+      <i class= "fa fa-bars" aria-hidden="true"></i>
+</div>
+<div *ngIf ="showSubMenu" class ="sub-action-button-container">
+      <div *ngFor="let item of actionMenuItems" class="action-button-sub-item animated fadeIn" [ngClass]="item.Class"  (click)="actionMenuItemClicked(item)">
+              <i [class]= "item.Icon" aria-hidden="true"></i>
+      </div>
+</div>

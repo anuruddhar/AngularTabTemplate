@@ -1,0 +1,37 @@
+<div class="p-grid layout-footer clearfix m-0 footer-flex">
+  <div id="appName" class="p-md-4 p-lg-4 p-0">
+    <span class="app-icon">
+      <i class="fa fa-fw fa-bank"></i>
+    </span>
+    AccuReach - V {{ global.Version}}
+    <span class="version-badge" [ngClass]="{'uat': (ReleaseType === 'UAT'), 'production': (ReleaseType === 'Live') }">
+      {{ ReleaseType }}
+    </span>
+  </div>
+  <div id="copyRights" class="p-md-4 p-lg-4 p-0 text-align-center copy-rights-center">
+    Powered by <span class="highlight-txt"> FYXO </span> © 2025 - {{dateTime | date:'yyyy'}}
+  </div>
+  <div id="inv-location" class="p-md-4 p-lg-4 p-0">
+    <span class="inv-location"><span class="location-icon">
+      <!-- <i class="icon icon-map"></i> -->
+      <i class="fa fa-fw fa-map-marker"></i>
+    </span> USA </span>
+  </div>
+</div>
+
+<style>
+
+.footer-flex {
+  display: flex;
+  align-items: center;        /* Vertically center items */
+}
+
+.inv-location-right {
+  margin-left: auto;        /* Push this to the right edge */
+}
+
+.copy-rights-center {
+  text-align: center; /* Center the text within the column */
+  width: 85%;         /* Ensure it takes full width to center correctly */
+}
+</style>

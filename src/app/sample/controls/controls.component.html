@@ -1,0 +1,373 @@
+<div class="ui-fluid" style="background-color: aqua; width: 100%;">
+
+    <div class="p-grid">
+        <div class="p-col-12 p-md-12 p-lg-6">
+            <div class="card">
+                <h2 class="template-title">Statndard Controls</h2>
+                <div>
+                    <div class="app-form-group">
+                        <label>Example Label Standard</label>
+                        <input type="text" pInputText class="app-form-control" placeholder="Example Input">
+                    </div>
+                    <div class="app-form-group">
+                        <label>Example Label Standard</label>
+                         <al-input Placeholder="Hello from Input"></al-input>
+                    </div>
+                    <div class="app-form-group">
+                        <label>Large Input</label>
+                        <input type="text" pInputText class="app-form-control app-form-control-lg"
+                            placeholder="Example Input">
+                    </div>
+                    <div class="app-form-group">
+                        <label>Small Input</label>
+                        <input type="text" pInputText class="app-form-control app-form-control-sm"
+                            placeholder="Example Input">
+                    </div>
+                    <div class="app-form-group">
+                        <label for="">Text Area</label>
+                        <textarea pInputTextarea type="text" class="app-form-control"></textarea>
+                    </div>
+
+                    <div class="app-form-group">
+                        <label for="">Drop Down</label>
+                        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City"></p-dropdown>
+                    </div>
+
+                    <div class="app-form-group">
+                        <label for="">Auto Complete</label>
+                        <p-autoComplete  [(ngModel)]="selectedCity"   [suggestions]="cities" />
+                    </div>
+
+                    <div class="p-grid">
+                        <div class="p-col-6">
+                            <div class="app-form-group">
+                                <label for="">Calendar</label>
+                                <p-calendar [(ngModel)]="date"></p-calendar>
+                            </div>
+                        </div>
+                        <div class="p-col-6">
+                            <div class="app-form-group">
+                                <label>Standard Input</label>
+                                <input type="text" pInputText class="app-form-control" placeholder="Example Input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-form-group">
+                        <label for="">Password</label>
+                        <input type="text" pPassword class="app-form-control" />
+                    </div>
+
+                    <div class="app-form-group">
+                        <label for="">Input Group</label>
+                        <div class="app-input-group">
+                            <input type="text" pInputText placeholder="Keyword">
+                            <button pButton type="button" icon="fa fa-superpowers"></button>
+                        </div>
+                    </div>
+
+                   
+
+                </div>
+            </div>
+        </div>
+        <div class="p-col-12 p-md-12 p-lg-6">
+            <div class="card">
+                <h2 class="p-col-12 template-title">Horizontal Form</h2>
+                <div class="app-form-group p-grid">
+                    <label class="p-col-2 control-label">Exapmple Label</label>
+                    <div class="p-col-10">
+                        <input type="text" pInputText class="app-form-control" placeholder="Example Input">
+                    </div>
+                </div>
+                <div class="app-form-group p-grid">
+                    <label class="p-col-2 control-label">Exapmple Label two</label>
+                    <div class="p-col-10">
+                        <input type="text" pInputText class="app-form-control" placeholder="Example Input">
+                    </div>
+                </div>
+                <div class="app-form-group p-grid">
+                    <label class="p-col-2 control-label">Exapmple Label three</label>
+                    <div class="p-col-10">
+                        <input type="text" pInputText class="app-form-control" placeholder="Example Input">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="p-col-12 template-title">Statndard Form Elements</h2>
+                <div class="app-form-group">
+                    <label for="">List Box</label>
+                    <p-listbox [options]="options" [(ngModel)]="selectedOption"></p-listbox>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="p-grid">
+
+        <div class="p-col-12 p-md-12 p-lg-12">
+            <div class="card">
+                <h2 class="p-col-12 template-title">Table Sample</h2>
+                <p-table [value]="cars" [style]="{'margin-top':'20px'}" [value]="cars" [rows]="10" [paginator]="true"
+                    [pageLinks]="3" [responsive]="true">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Vin</th>
+                            <th>Year</th>
+                            <th>Brand</th>
+                            <th>Color</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-car>
+                        <tr>
+                            <td>{{car.vin}}Sedan</td>
+                            <td>{{car.year}}2012</td>
+                            <td>{{car.brand}}Toyota</td>
+                            <td>{{car.color}}Black</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-grid">
+
+        <div class="p-col-12 p-md-12 p-lg-12">
+            <div class="card">
+                <h2 class="p-col-12 template-title">Table Sample</h2>
+                <p-table [value]="products" [tableStyle]="{'min-width': '50rem'}">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th>Name </th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Reviews</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-product let-columns="columns">
+                        <tr>
+                            <td>
+                                {{product.name}}
+                            </td>
+                            <td>
+                                {{product.price | currency:'USD'}}
+                            </td>
+                            <td>
+                                {{product.category}}
+                            </td>
+                            <td>
+                                {{product.quantity}}
+                            </td>
+                            <td>
+                                <!-- <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" /> -->
+                            </td>
+                            <td>
+                                <!-- <p-rating [(ngModel)]="product.rating" [readonly]="true" [cancel]="false" /> -->
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                InputText
+            </div>
+            <div class="ui-g-8">
+                <input pInputText type="text" />
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Textarea
+            </div>
+            <div class="ui-g-8">
+                <textarea pInputTextarea type="text"></textarea>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Calendar
+            </div>
+            <div class="ui-g-8">
+                <p-calendar [(ngModel)]="date"></p-calendar>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Suggest
+            </div>
+            <div class="ui-g-8">
+                <p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountriesSingle"
+                    (completeMethod)="filterCountrySingle($event)" field="name" [size]="30" placeholder="Countries"
+                    [minLength]="1"></p-autoComplete>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Button
+            </div>
+            <div class="ui-g-8">
+                <button pButton label="Save" type="button"></button>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                SplitButton
+            </div>
+            <div class="ui-g-8">
+                <p-splitButton label="Save" icon="pi pi-check" [model]="splitMenuItems" size="small"></p-splitButton>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Dropdown
+            </div>
+            <div class="ui-g-8">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+                <!-- <p-autoComplete
+                [(ngModel)]="selectedCity"
+                [virtualScroll]="true"
+                [virtualScrollItemSize]="34"
+                optionLabel="label"
+                [dropdown]="true" /> -->
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Password
+            </div>
+            <div class="ui-g-8">
+                <input type="text" pPassword />
+            </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Listbox
+            </div>
+            <div class="ui-g-8">
+                <p-listbox [options]="options" [(ngModel)]="selectedOption"></p-listbox>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-6">
+            <div class="ui-g-4">
+                Radio
+            </div>
+            <div class="ui-g-8">
+                <div class="ui-g radiobuttons">
+                    <div class="ui-g-12">
+                        <p-radioButton name="group1" value="Option 1" [(ngModel)]="val"></p-radioButton><label
+                            class="ui-widget">Option 1</label>
+                    </div>
+                    <div class="ui-g-12">
+                        <p-radioButton name="group1" value="Option 2" [(ngModel)]="val"></p-radioButton><label
+                            class="ui-widget">Option 2</label>
+                    </div>
+                    <div class="ui-g-12">
+                        <p-radioButton name="group1" value="Option 3" [(ngModel)]="val"></p-radioButton><label
+                            class="ui-widget">Option 3</label>
+                    </div>
+                    <div class="ui-g-12">
+                        <p-radioButton name="group1" value="Option 4" [(ngModel)]="val"></p-radioButton><label
+                            class="ui-widget">Option 4</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g-2">
+            Dialog
+        </div>
+        <div class="ui-g-10">
+            <button pButton label="Show" type="button" icon="pi pi-plus" (click)="showDialog()"></button>
+        </div>
+    </div>
+
+
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-4">
+            <p-menu [model]="items1"></p-menu>
+        </div>
+        <div class="ui-g-12 ui-md-8">
+            <p-panelMenu [model]="items2"></p-panelMenu>
+        </div>
+    </div>
+
+    <p-dialog header="Godfather 1" [(visible)]="display" [responsive]="true" [resizable]="false"
+        [style]="{width: '300px'}">
+        <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+            His beloved son Michael has just come home from the war, but does not intend to become part of his father's
+            business.
+            Through Michael's life the nature of the family business becomes clear. The business of the family is just
+            like the head of the family,
+            kind and benevolent to those who give respect,
+            but given to ruthless violence whenever anything stands against the good of the family.</p>
+    </p-dialog>
+
+    <p-table [value]="cars" [style]="{'margin-top':'20px'}" [value]="cars" [rows]="10" [paginator]="true"
+        [pageLinks]="3" [responsive]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Vin</th>
+                <th>Year</th>
+                <th>Brand</th>
+                <th>Color</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-car>
+            <tr>
+                <td>{{car.vin}}</td>
+                <td>{{car.year}}</td>
+                <td>{{car.brand}}</td>
+                <td>{{car.color}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <p-tree [value]="files" [style]="{'margin-top':'20px','margin-bottom':'20px'}"></p-tree>
+
+    <p-orderList [value]="cars" [listStyle]="{'height':'250px'}" [style]="{'margin-top':'20px','margin-bottom':'20px'}"
+        [responsive]="true" header="Responsive Cars">
+        <ng-template let-car pTemplate="item">
+            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}
+            </div>
+        </ng-template>
+    </p-orderList>
+
+
+    <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected"
+        [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}"
+        [style]="{'margin-top':'20px','margin-bottom':'20px'}">
+        <ng-template let-car pTemplate="item">
+            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}
+            </div>
+        </ng-template>
+    </p-pickList>
+
+    <div class="ui-g" style="max-width: 300px!important; width: 300px!important;">
+        <div class="ui-g-12">
+            <p-carousel headerText="Cars" [value]="cars2" [style]="{'margin-top':'20px','margin-bottom':'20px'}">
+                <ng-template let-car pTemplate="item">
+                    <div class="ui-g" style="text-align:center">
+
+                        <div class="ui-g-6">Vin</div>
+                        <div class="ui-g-6">{{car.vin}}</div>
+
+                        <div class="ui-g-6">Year</div>
+                        <div class="ui-g-6">{{car.year}}</div>
+
+                        <div class="ui-g-6">Color</div>
+                        <div class="ui-g-6">{{car.color}}</div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div> 
+    <!-- <div class="ui-g-12"><img src="assets/showcase/images/demo/car/{{car.brand}}.png" width="60"></div> -->
+</div>

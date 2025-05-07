@@ -1,0 +1,112 @@
+body {
+    .ui-progressbar {
+        border: $progressBarBorder;
+        height: $progressBarHeight;
+        background-color: $progressBarBgColor;
+
+        .ui-progressbar-value {
+            border: 0 none;
+            margin: 0;
+            background: $progressBarValueBgColor;
+        }
+
+        .ui-progressbar-label {
+            margin-top: 0;
+            color: $textColor;
+            display: none !important;
+        }
+    }
+
+    .ui-galleria {
+        .ui-galleria-nav-prev,
+        .ui-galleria-nav-next {
+            @include transition(all $transitionDuration);
+            position: absolute;
+            color: $textSecondaryColor;
+
+            &:hover {
+                @include scale(1.2);
+            }
+        }
+
+        .ui-galleria-nav-prev {
+            font-size: $fontSize + 2;
+        }
+
+        .ui-galleria-nav-next {
+            font-size: $fontSize + 2;
+        }
+    }
+
+    .ui-terminal {
+        background-color: $panelContentBgColor;
+        color: $panelContentTextColor;
+        border: $panelContentBorder;
+        padding: $panelContentPadding;
+
+        .ui-terminal-input {
+            font-size: $fontSize;
+            height: $fontSize + 2;
+        }
+
+        .ui-terminal-command {
+            height: $fontSize + 2;
+        }
+    }
+}
+
+.widget-section {
+    .widget-container {
+        .widget-detail-l2 {
+            .actions-button {
+              background-color: $panelHeaderBgColor;
+              color: $panelHeaderTextColor;
+            }
+          }
+
+        .widget-detail {
+            .widget-icon {
+                background: saturate(adjust-hue($panelHeaderBgColor, -13), 6.69);
+                color: $panelHeaderTextColor;
+            }
+        }
+
+        .link-widget-value {
+            color: $linkColor;
+
+            &:hover {
+                color: #fff;
+                background: $linkColor;
+            }
+        }
+    }
+}
+
+.rich-list-delete-ico {
+    color: #9E9EB3;
+    cursor: pointer;
+        &:hover {
+            color: #FF393C;
+        }
+
+}
+
+.os-widget {
+    background-color: lighten(saturate(adjust-hue($panelHeaderBgColor, -24), 10.91), 47.45)
+}
+// Action Button SCSS
+// .action-button{
+//     color: $buttonTextColor;
+//     background-color: $buttonBgColor;
+//     border: $buttonBorder;
+// }
+// .action-button-menu{
+//     color: $buttonTextColor;
+//     background-color: $buttonBgColor;
+//     border: $buttonBorder;
+// }
+// .action-button-sub-item{
+//     color: $buttonTextColor;
+//     background-color: $buttonBgColor;
+//     border: $buttonBorder;
+// }

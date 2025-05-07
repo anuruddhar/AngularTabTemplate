@@ -1,0 +1,192 @@
+.login-body {
+    height: 100%;
+    position: relative;
+    left:0; top:0; right:0; bottom:0;
+    background: url(../../../assets/images/bg-img.JPG); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    transition: 0.3s;
+
+    
+    
+    .location-block {
+        margin-top: 10px;
+    }
+    
+    label.select-location {
+        
+    }
+    .location-block .ui-dropdown {
+        border:0;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .location-block .ui-dropdown label.ui-dropdown-label:before {
+        content: "";
+        position: relative;
+        left: -5px;
+        content: "\f041";
+        font-family: FontAwesome;
+    }
+
+    .login-wrapper{
+        justify-content: center;
+        align-items: center;
+
+        .loading{
+            height: initial !important;
+        }
+        .backdrop{
+            background-color: rgba(150, 150, 150, 0.2) !important;
+        }
+    }
+    .login-container{
+        border: 20px solid #ffffff1f;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.24);
+        -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.24);
+        box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.24);
+        width: 460px;
+
+        .login-top {
+            background: $newthemeBgColor;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .user-block h3{
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        .login-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 0 0 5px 5px;
+            text-align: center;
+            display: block;
+        }
+
+        .ui-g-6 {
+            padding: 0;
+        }
+
+        .right-side {
+            padding: 100px 0;
+        }
+
+        .ui-g-12 {
+            padding: 10px 50px 10px 50px;
+
+            &.container {
+                margin-bottom: 20px;
+
+                h2 {
+                    color: #272939;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-top: 6px;
+                    margin-bottom: 0;
+                }
+
+                h3 {
+                    color: #b7b7c3;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .login-image {
+            height: 100%;
+            width: 100%;
+        }
+
+        .input-wrapper {
+            position: relative;           
+            i {
+                position: absolute;
+                color: #bdc3c9;
+                top: 5px;
+                right: 8px;
+                font-size: 16px;
+            }
+
+            input {
+                padding-right: 22px;
+            }
+            
+            .ui-dropdown{
+                padding: 10px 0;
+            }
+            .ui-dropdown:hover {
+                border:0;
+                border-bottom: 1px solid rgba(90, 136, 176, 0.397);
+                -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+                -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        label.select-location {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #607d8b0d;
+            border-radius: 5px;
+            color: #080808;
+            border: 1px solid #607d8b14;
+            font-weight: 600;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #0d304c;
+        }
+        .button-container{
+            margin-top: 40px;
+        }
+        button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 35px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            background: $newSecondaryColor;
+            text-transform: uppercase;
+            border: 0;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+            width: 100%;
+        }
+        .ui-inputtext{
+            font-size: 11px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .login-body {
+        .login-panel {
+            width: 100%;
+            margin: 0;
+            left: 0;
+            top: 80px;
+
+            .ui-g-12 {
+                padding: 15px 50px;
+            }
+
+            .left-side {
+                display: none;
+            }
+
+            .right-side {
+                padding: 0;
+            }
+        }
+
+    }
+}

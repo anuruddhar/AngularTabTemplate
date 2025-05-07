@@ -1,0 +1,55 @@
+
+<div class= "slide-show-container" #widgetContainer>
+    <div class="widget-container">
+        <div class="widget-item loading" [ngClass]="{'animated zoomIn': !item.IsLoading}" *ngFor="let item of WidgetsToShow" (click) = "onItemClicked(item)">
+          <div class="widget-body">
+            <div class="circle" [ngStyle]="{ 'background-color': item.BackgroundColor}">
+              <i [ngClass]="item.Icon"></i>
+            </div>
+            <div class="data-container">
+              <div class="header-text"> {{item.MainData}} </div>
+              <div class="detail-text"> {{item.DetailData}} </div>
+            </div>
+          </div>
+          <div class="widget-footer">
+            <div>{{item.Title}}</div>
+          </div>
+          <!-- <ngx-loading [show]="item.IsLoading" [config]="config" [template]="loadingTemplate"></ngx-loading> -->
+        </div>
+      </div>
+      <a class="prev" *ngIf = "IsShowPreNex" (click) = "showPrevious()">&#10094;</a>
+      <a class="next" *ngIf = "IsShowPreNex" (click) = "showNext()">&#10095;</a>
+</div>
+
+
+
+
+
+<!-- <div class="widget-item">
+  <div class="widget-body">
+    <div class="circle" [ngStyle]="{ 'background-color': background_color}">
+      <i class="icon-test-supervions-1"></i>
+    </div>
+    <div class="data-container">
+      <label class="header-text">10</label>
+    </div>
+  </div>
+  <div class="widget-footer">
+    <label>My Task</label>
+  </div>
+</div>
+
+<div class="widget-item">
+  <div class="widget-body">
+    <div class="circle">
+      <i class="icon-test-supervions-1"></i>
+    </div>
+    <div class="data-container">
+      <label class="header-text">20</label>
+      <label class="detail-text">$51,689.47</label>
+    </div>
+  </div>
+  <div class="widget-footer">
+    <label>My Task2</label>
+  </div>
+</div> -->

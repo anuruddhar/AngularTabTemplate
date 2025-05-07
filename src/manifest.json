@@ -1,0 +1,31 @@
+{
+    "short_name":"AMR",
+    "name":"Angular Solution",
+    "start_url":"./",
+    "theme_color":"#0b82e1",
+    "background_color":"#ffffff",
+    "display":"standalone",
+    "orientation":"portrait",
+    "icons":[
+      {
+        "src": "assets/layout/images/login/appicon-128x128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/layout/images/login/appicon-192x192.png",
+        "sizes": "192x92",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/layout/images/login/appicon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/layout/images/login/appicon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }   
+    ]
+  }

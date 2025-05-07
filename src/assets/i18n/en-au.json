@@ -1,0 +1,54 @@
+﻿{
+  "WELCOME": "Welcome",
+  "SIGN_IN": "Sign In",
+  "BTN_SAVE": "Save",
+  "BTN_SEARCH": "Search",
+  "BTN_SEAR_001": "Previous",
+  "BTN_SEAR_002": "Next",
+  "BTN_SEAR_003": "Export",
+  "BTN_SEAR_004": "Select",
+  "BTN_SEAR_005": "Close",
+  "BTN_SPB_001": "Browse",
+  "BTN_UNSELECT_ALL": "Unselect All",
+  "BTN_UPDATE": "Update",
+  "BTN_YES": "Yes",
+  "SAVE_CONTINUE": "Save and continue",
+  "SHOW_HIDE_ADV_SEARCH": "Show/hide advanced search",
+  "LOADING_MODULE": "Loading Module",
+  "TAB_HISTORY": "History",
+  "TAB_SEARCH_RESULT": "Search Result",
+  "MSG_NO_PREV_SEARCH": "There is no previous search history!",
+  "MSG_IGNORED": "Ignored",
+  "ACTIONS": "Actions",
+
+  "mnuDashboard": "Dashboard",
+  "mnuAccInfo": "Account Information",
+
+  "mnuClient": "Client",
+  "mnuClientSupervision": "Client Supervision",
+  "mnuCreateClient": "Create Client",
+
+  "mnuCredit": "Credit",
+  "mnuCreditSupervision": "Credit Supervision",
+  "mnuCreditIntegration": "Integration",
+
+
+  "mnuAdministration": "Administration",
+
+  "mnuAlgalHome": "Algal Home",
+  "mnuWaterbody": "Waterbody",
+  "mnuUsesAndTriggers": "Uses and Triggers",
+  "mnuAlgalSpecies": "Algal Species",
+  "mnuRegionalCoordinators": "Regional Coordinators",
+  "mnuAlgalReports": "Reports",
+  "mnuDocumentations": "Documentations",
+  "mnuResolveImportExceptions": "Resolve Import Exceptions",
+
+  "mnuLandingPage": "Landing Page",
+  "mnuCorporateRiskMatrix": "Corporate Risk Matrix",
+  "mnuCorporateRisks": "Corporate Risks",
+  "mnuEmergencyRiskMatrix": "Emergency Risk Matrix",
+  "mnuEmergencyRisks": "Emergency Risks",
+  "mnuRiskReports": "Reports",
+  "mnuRiskAdministration": "Risk Administration"
+}

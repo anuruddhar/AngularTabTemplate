@@ -1,0 +1,19 @@
+$sidebarTopStartBgColor:#a8e063;
+$sidebarTopEndBgColor:#56ab2f;
+$sidebarAnchorColor:#ffffff;
+$menuitemActiveColor:#56ab2f;
+$rootMenuitemActiveIconColor:#ffffff;
+$menuitemBadgeBgColor:#8863C8;
+$menuitemBadgeTextColor:#ffffff;
+$horizontalLayoutTopbarTextColor:#ffffff;
+$horizontalLayoutTopbarTextHoverColor:#E3ECD9;
+
+//tab bar
+$tabPanelTextColor: #d9e0e6;
+$tabPanelItemBgColor: #002b4e0a; //Do not replace (transparent Color)
+$tabPanelItemBorderColor: #ffffff30; //Do not replace (transparent Color)
+$tabPanelItemActiveBgColor: #0000003d; //Do not replace (transparent Color)
+$tabPanelItemActiveTextColor: #ffffff;
+$tabPanelItemActiveBorderColor: #ffffff5e; //Do not replace (transparent Color)
+
+@import '../../sass/layout/_layout';

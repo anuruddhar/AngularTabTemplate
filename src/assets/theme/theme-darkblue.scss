@@ -1,0 +1,22 @@
+//Used for Page layout
+//sass --watch src/assets/theme/theme-darkblue.scss:src/assets/theme/theme-darkblue.css  
+
+/* #ROOBAN# */
+$primaryColor:#037cc5;
+$primaryTextColor:#ffffff;
+$primaryDarkColor:#3B658B;
+$inputFocusBorderColor:#5A87B0;
+$highlightBgColor:#0bdfab;
+$highlightTextColor:#000000;
+$headerBgColor:#cfe2f1;
+$headerTextColor:#040404;
+$headerBorderColor:#c2d6e6;
+$headerIconColor:#ffffff;
+$headerIconHoverColor:lighten($primaryColor,35%);
+//$headerBorderColor:$primaryColor;
+$datableEvenRowBgColor:#E9EFF7;
+$datatableHoverBgColor:#DBEBF9; 
+ 
+@import '../sass/theme/_theme';    
+           
+

@@ -1,0 +1,42 @@
+<div class="table-container">
+  <!-- <div class="table-filter-container ui-widget-header widget-blue-header">
+    <i class="fa fa-search search-ico" style="margin:4px 4px 0 0"></i>
+    <input #gb type="text" pInputText size="50" placeholder="{{i18n.GLOBAL_FILTER}}" (input)="dt.filterGlobal($event.target.value?, 'contains')" class="filter-input">
+  </div> -->
+  <div class="table-data-container">
+    <p-table [columns]="Cols" [value]="DataList"
+    [paginator]="false" [responsive]="true" [scrollable]="true" sortMode="multiple" selectionMode="single" scrollHeight="100%"
+    exportFilename="Table"  #dt>
+    <!-- [contextMenu]="cm"  -->
+    <ng-template pTemplate="colgroup" let-columns>
+      <colgroup>
+        <col *ngFor="let col of columns" [style.width]="col.width">
+      </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th  *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.field"  >
+          {{col.header}}
+          <p-sortIcon  [field]="col.field"></p-sortIcon>
+          <div style="display:inline-block; position: relative;" > 
+            <span *ngIf = "col.tooltip?.length > 0" pTooltip="{{col.tooltip}}" ><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns"  let-rowIndex="rowIndex">
+      <tr [pContextMenuRow]="rowData" [pContextMenuRowIndex]="rowIndex" [pSelectableRow]="rowData" (dblclick)="onDoubleClicked(rowData)">
+        <td *ngFor="let col of columns" class="ui-resizable-column" [ngClass]="col.class" [style.color]="col.color" > 
+            <div [innerHTML]="rowData[col.field]"></div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="footer" *ngIf="ShowFooter">
+        <tr>
+          <td *ngFor="let f of Footers" [attr.colspan]="f.colspan" [ngClass]="f.class">{{f.text}}</td>
+        </tr>
+      </ng-template>
+  </p-table>
+  <!-- <p-contextMenu #cm [model]="ContextMenuItems"></p-contextMenu> -->
+  </div>
+</div>

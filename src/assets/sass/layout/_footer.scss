@@ -1,0 +1,58 @@
+.layout-wrapper {
+    .layout-main {
+        .layout-footer {
+            padding: 10px 24px;
+            border: 1px solid #dee4e9;
+            background: #ffffff;
+            color: #aba9b3;
+            font-size: 1em;
+            position: relative;
+
+            .highlight-txt{
+                color: #6c677b;
+                font-weight: 600;
+            }
+            .app-icon{
+                color: #767284;
+                font-size: 1.2em;
+                vertical-align: -2px;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            .location-icon{
+                color: #767284;
+                font-size: 1.2em;
+                vertical-align: -3px;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            img {
+                margin-top: 5px;
+            }
+
+            .inv-location{                
+                color: #6c677b;
+                font-weight: 600;
+                font-size: 12px;
+            }
+
+            .layout-footer-icons {
+                float: right;
+
+                a {
+                    font-size: 24px;
+                    margin-left: 28px;
+                    display: inline-block;
+
+                    i {
+                        color: $textColor;
+
+                        &:hover {
+                            color: $textSecondaryColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,172 @@
+.filter-wrapper{
+   
+    // position: fixed;
+    // width: 260px;
+
+    h1{
+        background: #ebe9f1;
+        padding: 16px;
+        text-align: center;
+        color: #444444;
+        font-size: 1.1em;
+        border-bottom: 1px dashed #cfcbda;
+        margin: 0;
+        font-weight: 600;
+
+        i{
+            display: inline-block;          
+            margin-right: 6px;
+            vertical-align: 2px;
+        }
+    }
+    .filter-form{
+        padding: 10px;
+
+        .filter-button{         
+            padding: 3px 10px;           
+            border-radius: 3px;
+        }
+        .ui-calendar{
+            .ui-button{
+                background-color: transparent;
+                border-right: 1px solid #dbdde4;
+                border-top: 1px solid #dbdde4;
+                border-bottom: 1px solid #dbdde4;
+                border-radius: 5px;
+            }
+            .ui-button-icon-left{
+                color: #a9a8af;        
+                font-size: 1.6em;
+            }
+        }
+       
+    }
+
+    // .filter-form{
+    //     padding: 10px;
+
+    //     label{
+    //         color: #686868;
+    //         display: inline-block;
+    //         margin-bottom: 5px; 
+    //         vertical-align: -2px;
+    //     }
+
+    //     .ui-inputtext{
+    //         border-color: #dbdde4;
+    //         border-radius: 5px;
+    //         padding: 10px;
+    //         font-size: 1.1em;
+    //     }
+        
+    //     .ui-dropdown{
+    //         border-color: #dbdde4;
+    //         border-radius: 5px;
+    //         // padding: 10px;
+    //         font-size: 1.1em;
+    //     }
+    //     .ui-dropdown label.ui-dropdown-label{
+    //         margin-bottom: 0 !important;
+    //         padding: 8px 10px !important;
+    //     }
+       
+    //     .ui-dropdown-panel .ui-dropdown-filter-container .ui-dropdown-filter{
+    //         padding: 5px 20px 10px 10px;
+    //     }
+    //     .ui-dropdown-panel .ui-dropdown-filter-container .ui-dropdown-filter-icon{
+    //         top: 20px;
+    //         right: 22px;
+    //     }
+    //     .ui-button{
+    //         background-color: transparent;
+    //         border-right: 1px solid #dbdde4;
+    //         border-top: 1px solid #dbdde4;
+    //         border-bottom: 1px solid #dbdde4;
+    //         border-radius: 5px;
+    //     }
+
+    //     .ui-button-icon-left{
+    //         color: #afafaf;            
+    //         font-size: 1.6em;
+    //     }
+
+    //     .ui-button:enabled:hover{
+    //         background-color: #eeeff3 !important;
+    //     }
+    //     .ui-inputtext:enabled:hover:not(.ui-state-error){
+    //         border-color: #dbdde4;
+    //     }
+    //     .ui-button:enabled:focus{
+    //         background: #15a4fa;
+    //         border: 1px solid #1aa3f5;
+    //     }
+    //     .ui-inputtext{
+    //         border-color: #dbdde4;
+    //         border-radius: 5px;
+    //         padding: 10px;
+    //         font-size: 1.1em;
+    //     }
+    //     .ui-radiobutton-icon{
+    //         margin-top: -5px !important;
+    //         margin-left: -5px !important;
+    //     }
+    //     .filter-period h3{
+    //         margin: 10px 0;
+    //         background: #f6fbff;
+    //         padding: 8px;
+    //         font-size: 0.7em;
+    //         border: 1px dashed #ccece4;
+    //         color: #637d76;
+    //     }
+    //     .filter-form label{
+    //         margin-left: 10px;
+    //     }
+    //     .filter-button{
+    //         background: #15a4fa;
+    //         border: 1px solid #1aa3f5;
+    //         color: #ffffff;
+    //         padding: 2px;
+    //         font-size: 1.2em;
+
+    //         .ui-button-icon-left{
+    //             color: #fff;
+    //             font-size: 1.1em;
+    //         }
+    //     }
+    //     .ui-multiselect{
+    //         border-radius: 5px;
+    //         border-color: #dbdde4;
+    //     }
+    //     .ui-multiselect-label{
+    //         margin-top: 5px;
+    //         margin-bottom: 0;
+    //     }
+    //     .filter-button:enabled:hover{
+    //         background-color: #0ae0aa  !important;
+    //         border-color: #0ae0aa !important;
+            
+    //     }
+        
+    // }
+}
+
+.m-b-15{
+    margin-bottom: 15px;
+}
+
+.m-b-10{
+    margin-bottom: 10px;
+}
+
+.m-b-20{
+    margin-bottom: 20px;
+}
+
+.m-b-30{
+    margin-bottom: 30px;
+}
+
+.popover-layout{
+    border: 5px solid red;
+    z-index: 99999999;
+}

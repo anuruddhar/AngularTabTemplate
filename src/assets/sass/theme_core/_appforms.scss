@@ -1,0 +1,212 @@
+
+.app-form-group{
+    margin-bottom: 1rem;
+    
+    label{
+        display: block;
+        margin-bottom: 0.4em;
+        color: #4a4a58;
+        font-weight: 600;
+        font-size: 13px;   
+    }
+    .ui-radiobutton-label{
+        display: inline-block !important;
+        margin-bottom: 0;
+    }
+    .app-form-control{
+        display: block;
+        width: 100%;
+        padding: $inputPadding !important;
+        font-size: $inputFontSize;
+        line-height: $inputLineHeight;
+        color: $textColor;
+        background-color: $inputBgColor;
+        background-clip: padding-box;
+        border: $inputBorder;
+        border-radius:$inputBorderRadius;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        font-family: $fontFamily !important;
+
+        &:focus{
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: $inputFocusColor !important;
+        }
+        &:disabled{
+            background: #f3f2f7;
+        }
+       
+    }
+    .ui-multiselect{
+        border-radius: $inputBorderRadius;
+        padding: 0.15em;
+    }
+    .input-mask{
+        width: 100%;
+        input{
+            display: block;
+            width: 100%;
+            padding: $inputPadding !important;
+            font-size: $inputFontSize;
+            line-height: $inputLineHeight;
+            color: $textColor;
+            background-color: $inputBgColor;
+            background-clip: padding-box;
+            border: $inputBorder;
+            border-radius:$inputBorderRadius;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            text-align: right;
+
+            &:focus{
+                color: #495057;
+                background-color: #fff;
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: $inputFocusColor !important;
+            }
+            &:disabled{
+                background: #f3f2f7;
+            }
+        }
+    }
+    .ui-calendar-button {
+        background-color: $inputGroupCalendarBtnBackground;
+        border: 1px solid  $inputGroupCalendarBtnBorder;
+        color: $inputGroupCalendarBtnFG;
+        border-radius: 3px;
+
+        span{            
+            font-size: 1.6em; 
+        }
+        &:hover{
+            background-color: $inputGroupCalendarBtnBackground  !important;
+            border-color:  $inputGroupCalendarBtnBorder  !important;
+            color:$inputGroupCalendarBtnFG  !important;
+        }
+        &:focus{
+            background-color: $inputGroupCalendarBtnBackground !important;
+            border-color: $inputGroupCalendarBtnBorder !important;
+            color: $inputGroupCalendarBtnFG !important;
+        }
+    }
+    .app-form-button{
+        padding: 0.275rem 0.75rem;
+        border-radius: 30px;
+    }
+    
+    .ui-calendar{
+        .ui-inputtext{
+            display: block;
+            width: 100%;
+            padding: $inputPadding !important;
+            font-size: $inputFontSize;
+            line-height: $inputLineHeight;
+            color: $textColor;
+            background-color: $inputBgColor;
+            background-clip: padding-box;
+            border: $inputBorder;
+            border-radius:$inputBorderRadius;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }        
+    }
+    // Claendar-Override
+    .ui-calendar.ui-calendar-w-btn {
+        .ui-inputtext {
+            display: inline-block !important;
+        }       
+    }
+    .ui-calendar.ui-calendar-w-btn {   
+
+        .ui-datepicker-trigger.ui-button {
+           right: 0;
+        }
+    }
+    .app-form-control-lg{
+        padding: .5rem 1rem;
+        font-size: 1.25em;
+        line-height: 1.5;
+        border-radius: .3rem;
+    }
+    .app-form-control-sm{
+        padding: .25rem .5rem;
+        font-size: .875em;
+        line-height: 1.5;
+        border-radius: .2rem;
+    }
+    .ui-inputtext{  
+        margin: 0;
+        padding: 0;
+
+        &:focus{
+            color: #495057;
+            background-color: #fff;
+            border-color:$inputFocusBorderColor;
+            outline: 0;
+            box-shadow: $inputFocusColor !important;
+        }
+    }
+    .ui-dropdown{
+        border: $inputBorder;
+        border-radius: $inputBorderRadius;
+        padding: $inputPadding !important;
+        line-height: $inputLineHeight;
+        font-size: $inputFontSize;
+
+        .ui-state-focus{
+            color: #495057;
+            background-color: #fff;
+            border-color: $inputFocusBorderColor;
+            outline: 0;
+            box-shadow: $inputFocusColor !important;
+        }
+        
+    }
+    .control-label{        
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        word-break: break-all;
+        @media screen and (max-width: $break-medium) {
+            justify-content: flex-start;
+            padding-top: 0;
+            padding-bottom: 5px;
+          }
+    }
+    
+    .ui-dropdown-filter{
+        padding:  $inputPadding !important;
+        border-radius: $inputBorderRadius;
+    }
+
+    .app-input-group{
+        display: flex;
+
+        input{
+            display: block;
+            width: 100%;
+            padding: $inputPadding !important;
+            font-size: $inputFontSize;
+            line-height: $inputLineHeight;
+            color: $textColor;
+            background-color: $inputBgColor;
+            background-clip: padding-box;
+            border: $inputBorder;
+            border-radius:$inputBorderRadius;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            font-family: $fontFamily !important;
+        }
+        input:disabled{
+            background: #f3f2f7;
+        }
+        button{
+            margin-left: -2px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    
+}

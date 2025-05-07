@@ -1,0 +1,17 @@
+.version-badge {
+    display: inline-block;
+    padding: 1px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-left: 5px;
+  }
+  
+  .uat {
+    background: #ffa31c;
+    color: white;
+  }
+  
+  .production {
+    background: #0ae0aa;
+    color: white;
+  }
