@@ -43,7 +43,7 @@
             "propertiesClass": [
                 {
                     "name": "title",
-                    "defaultValue": "'TestStories2'",
+                    "defaultValue": "'AngularApp'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -60,7 +60,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'TestStories2';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'AngualrApp';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {

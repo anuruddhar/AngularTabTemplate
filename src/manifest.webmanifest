@@ -1,6 +1,6 @@
 {
-  "name": "AccuReach",
-  "short_name": "AccuReach",
+  "name": "AngularApp",
+  "short_name": "AngularApp",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

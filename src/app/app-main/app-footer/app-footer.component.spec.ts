@@ -34,7 +34,7 @@ describe('AppFooterComponent', () => {
     dateCurrent =  new Date();
     date =  dateCurrent.getFullYear().toString();
     version = ' ' + component.global.Version + ' ';
-    expect(debugElelmentAppName.nativeElement.innerText).toEqual(`AccuReach  - V${version}`);
+    expect(debugElelmentAppName.nativeElement.innerText).toEqual(`AngularApp  - V${version}`);
     expect(debugElelmentCopyRights.nativeElement.innerText).toEqual(`Powered by FYXO © 2025 - ${date}`);
     expect(debugElelmentlocation.nativeElement.innerText).toEqual(`Hello`);
   });
